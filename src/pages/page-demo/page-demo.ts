@@ -13,7 +13,6 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 
 //引入自定义的provider
 import {InterfaceListProvider} from '../../providers/interface-list/interface-list';
-import {GeolocationProvider} from '../../providers/geolocation/geolocation';
 
 
 
@@ -58,13 +57,10 @@ export class PageDemoPage {
 
   constructor(public navCtrl: NavController,
               public interface_lists: InterfaceListProvider,
-              public geolocation: GeolocationProvider,
               public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    this.jqueryDemo();
-
 
   }
 
@@ -75,30 +71,6 @@ export class PageDemoPage {
       this.httpReturnData=JSON.stringify(returnData);
     })
   }
-  getGeolocation(){
-    // this.geolocation.getGeolocation();
-    this.geolocation.watchPosition();
-  }
-
-  getTpMap(){
-     // this.navCtrl.push('BaiduMapPage');
-     this.navCtrl.push('GaodemapPage');
-  }
-
-  //使用jquery的案例
-  jqueryDemo() {
-    $('.jqueryClass1').on('click', () => {
-      $(this).html('jquery button click');
-      $(this).css('color', 'red');
-      console.log('click');
-    });
-    $('.jqueryClass2').on('click', function () {
-      $(this).html('jquery button click');
-      $(this).css('color', 'red');
-      console.log('click');
-    });
-  }
-
 
   toSonData(){
     this.name='你好 世界';

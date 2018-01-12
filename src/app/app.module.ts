@@ -17,7 +17,6 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import {HttpSerProvider} from '../providers/http-ser/http-ser';
 import {PopSerProvider} from '../providers/pop-ser/pop-ser';
 import {InterfaceListProvider} from '../providers/interface-list/interface-list';
-import {GeolocationProvider} from '../providers/geolocation/geolocation';
 
 //引入自定义组件component  （也可以不全局引入，在需要的页面引入需要的组件）
 import {ComponentsModule} from '../components/components.module';
@@ -49,7 +48,7 @@ import {ComponentsModule} from '../components/components.module';
         HttpSerProvider,
         PopSerProvider,
         InterfaceListProvider,
-        GeolocationProvider
+        
     ]
 })
 export class AppModule {
