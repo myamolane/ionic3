@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {LoadingController, AlertController, ModalController, ToastController} from 'ionic-angular';
+import { ActionSheetController, LoadingController, AlertController, ModalController, ToastController} from 'ionic-angular';
 
 /*
   Generated class for the PopSerProvider provider.
@@ -12,13 +12,13 @@ import {LoadingController, AlertController, ModalController, ToastController} fr
  *
  */
 @Injectable()
-export class PopSerProvider {
-    private load: any;
+export class PopService {
+    public load: any;
     constructor(public loadingCtrl: LoadingController,
                 public alertCtrl: AlertController,
                 public toastCtrl: ToastController,
-                public modalCtrl: ModalController) {
-        console.log('PopSerProvider Provider');
+                public modalCtrl: ModalController,
+                public actionCtrl: ActionSheetController ) {
     }
 
     /**
@@ -46,6 +46,15 @@ export class PopSerProvider {
         alert.present();
     }
 
+    presentAlert(title, message, buttons) {
+        let alert = this.alertCtrl.create({
+            title: title,
+            message: message,
+            buttons: buttons
+        })
+        alert.present()
+    }
+    
     /**
      * 自定义alert弹窗-
      */
@@ -157,11 +166,19 @@ export class PopSerProvider {
             dismissOnPageChange: false,     //当页面变化时是否dismiss
         });
         toast.onDidDismiss(() => {
-            console.log('Dismissed toast');
         });
         toast.present();
     }
 
+    presentToast(message: string, duration, position = "bottom", cssClass = "") {
+        let toast = this.toastCtrl.create({
+            message: message,
+            duration: duration,
+            position: position,
+            cssClass: cssClass
+        })
+        toast.present()
+    }
     /**
      * 拨打号码弹窗
      */
@@ -230,10 +247,25 @@ export class PopSerProvider {
                 this.load.dismiss();
             }, 10000);
         }
-        this.load.onDidDismiss(() => {
-            console.log('Dismissed loading');
-        });
+        // this.load.onDidDismiss(() => {
+        //     console.log('Dismissed loading');
+        // });
     }
-
-
+    actionSheet(title, buttons, css){
+        let as = this.actionCtrl.create({
+            title:title,
+            buttons: buttons,
+            cssClass:css
+        })
+        as.present()
+    }
+    presentModal(component, data, cssClass=null, enableBackdropDismiss  = false, showBackdrop = false){
+        let modal = this.modalCtrl.create(component, data, {
+            enableBackdropDismiss:enableBackdropDismiss,
+            showBackdrop:showBackdrop,
+            cssClass:cssClass
+        })
+        modal.present()
+        return modal
+    }
 }

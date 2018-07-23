@@ -15,7 +15,7 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 
 //引入自定义provider
 import {HttpSerProvider} from '../providers/http-ser/http-ser';
-import {PopSerProvider} from '../providers/pop-ser/pop-ser';
+import {PopService} from '../providers/pop-ser/pop-ser';
 import {InterfaceListProvider} from '../providers/interface-list/interface-list';
 
 //引入自定义组件component  （也可以不全局引入，在需要的页面引入需要的组件）
@@ -46,7 +46,7 @@ import {ComponentsModule} from '../components/components.module';
         SplashScreen,
         // {provide: ErrorHandler, useClass: IonicErrorHandler},
         HttpSerProvider,
-        PopSerProvider,
+        PopService,
         InterfaceListProvider,
         
     ]

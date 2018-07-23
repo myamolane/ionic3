@@ -1,0 +1,26 @@
+<ion-menu [content]="menuContent" class="menu" (ionOpen)="menuOpen()">
+  <ion-header >
+      <ion-toolbar class="color-divider-back">
+          MENU
+      </ion-toolbar>
+  </ion-header>
+  <ion-content>
+      <ion-list no-lines>
+          <button menuClose ion-item no-lines class="menu-list" *ngFor="let page of pages" (click)="openPage(page)">
+              <i [ngClass]="page.icon"></i>
+              {{page.title}}
+          </button>
+      </ion-list>
+      <!-- <ion-footer *ngIf="userService.isCompanyOwner" no-lines class="color-background menu-footer">
+          <button ion-button round (click)="enterCompanyCenter()">切换到企业中心</button>
+      </ion-footer> -->
+  </ion-content>  
+</ion-menu>
+
+<!-- <ion-content padding>
+
+</ion-content> -->
+
+<ion-nav [root]="rootPage" #menuContent swipeBackEnabled="false">
+
+</ion-nav>
