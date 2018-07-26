@@ -21,12 +21,12 @@ export class MenuPage {
   constructor(private loadingCtrl: LoadingController, public navCtrl: NavController, public navParams: NavParams) {
     this.pages=[
       //{ title: '我的订单', component: "OrderTabPage", icon: 'iconfont icon-dingdan'},
-      { title: '订单收入', component: 'IncomingPage', icon: 'iconfont icon-qianbao-SVG'},
-      { title: '我的星级', component: 'StarPage', icon: 'iconfont icon-xingji'},
-      { title: '我的信用分', component: 'CreditScorePage', icon: 'iconfont icon-zuanshi'},
-      { title: '帮助中心', component: 'HelpCenter', icon: 'iconfont icon-bangzhuzhongxin'},
-      { title: '设置', component: 'SettingPage', icon: 'iconfont icon-shezhi'},
-      { title: '联系客服', component: 'Contact', icon: 'iconfont icon-kefu'}, 
+      { title: '爱の足迹', component: 'TravelPage', icon: 'iconfont icon-jiaoya'},
+      // { title: '我的星级', component: 'StarPage', icon: 'iconfont icon-xingji'},
+      // { title: '我的信用分', component: 'CreditScorePage', icon: 'iconfont icon-zuanshi'},
+      // { title: '帮助中心', component: 'HelpCenter', icon: 'iconfont icon-bangzhuzhongxin'},
+      // { title: '设置', component: 'SettingPage', icon: 'iconfont icon-shezhi'},
+      // { title: '联系客服', component: 'Contact', icon: 'iconfont icon-kefu'}, 
     ]
   }
 

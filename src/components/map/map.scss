@@ -1,3 +1,11 @@
 #map {
     height: 100%;
+    @keyframes fade-in {  
+        0% {opacity: 0;}/*初始状态 透明度为0*/  
+        100% {opacity: 1;}/*结束状态 透明度为1*/  
+    }  
+    .amap-icon{
+        animation: fade-in;
+        animation-duration: 5s;
+    }
 }

@@ -1,3 +1,40 @@
 page-index {
-
+    @keyframes fade-in {  
+        0% {opacity: 1;}/*初始状态 透明度为0*/  
+        100% {opacity: 0.3;}/*结束状态 透明度为1*/  
+    }  
+    .love{
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        opacity: 0.3;
+        transform: translateY(-50%) translateX(-50%);
+        animation: fade-in;
+        animation-duration: 10s;
+    }
+    .date{
+        position:fixed;
+        left: 50%;
+        top: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        z-index:999;
+        font-family: 'Hanalei Fill', cursive;
+        font-size: 48px;
+        width: 100%;
+        text-align: center;
+        span {
+            font-size: 70px;
+            color: lightpink;
+            text-shadow: 0 2px 4px rgba(0,0,0,.5);
+        }
+    }
+    .confession {
+        font-family: 'Gaegu', cursive;
+        text-align: center;
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        bottom: 0;
+        font-size: 14px;
+    }
 }

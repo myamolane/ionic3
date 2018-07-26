@@ -12,7 +12,7 @@ import {TabsPage} from '../pages/tabs/tabs';
 //引入native
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
-
+import { NativeAudio } from '@ionic-native/native-audio';
 //引入自定义provider
 import {HttpSerProvider} from '../providers/http-ser/http-ser';
 import {PopService} from '../providers/pop-ser/pop-ser';
@@ -48,7 +48,7 @@ import {ComponentsModule} from '../components/components.module';
         HttpSerProvider,
         PopService,
         InterfaceListProvider,
-        
+        NativeAudio,
     ]
 })
 export class AppModule {
